@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { TransactionTypeStrategyFactory } from '../strategy/cnab.strategy';
-import { ParsedTransaction } from '../types/parsed-transaction.type';
+import { ParsedTransaction } from 'src/common/types/parsed-transaction.type';
 
 @Injectable()
 export class CNABParser {

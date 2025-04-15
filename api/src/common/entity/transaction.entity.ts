@@ -1,6 +1,13 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
+import { Store } from './store.entity';
 
-@Entity()
+@Entity('transactions')
 export class Transaction {
   @PrimaryGeneratedColumn()
   id: number;
@@ -23,9 +30,7 @@ export class Transaction {
   @Column({ type: 'time' })
   hour: string;
 
-  @Column()
-  storeOwner: string;
-
-  @Column()
-  storeName: string;
+  @ManyToOne(() => Store, (store) => store.transactions)
+  @JoinColumn({ name: 'store_id' })
+  store: Store;
 }

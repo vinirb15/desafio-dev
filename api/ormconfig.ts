@@ -1,13 +1,14 @@
-import { Transaction } from 'src/cnab/entity/transaction.entity';
+import { Store } from 'src/common/entity/store.entity';
+import { Transaction } from 'src/common/entity/transaction.entity';
 import { DataSource } from 'typeorm';
 
 export default new DataSource({
   type: 'postgres',
-  host: 'localhost', // ou 'db' se estiver no docker
+  host: 'localhost',
   port: 5432,
   username: 'postgres',
   password: 'postgres',
   database: 'cnab',
-  entities: [Transaction],
+  entities: [Transaction, Store],
   migrations: ['src/migrations/*.ts'],
 });

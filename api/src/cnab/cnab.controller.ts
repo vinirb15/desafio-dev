@@ -26,7 +26,7 @@ export class CNABController {
   @ApiOperation({
     summary: 'Uploads a CNAB file and processes transactions',
   })
-  @ApiConsumes('multipart/form-date')
+  @ApiConsumes('multipart/form-data')
   @ApiBody({
     description: 'CNAB File .txt',
     required: true,
@@ -52,7 +52,7 @@ export class CNABController {
 
     return {
       message: 'File uploaded successfully',
-      totalRegistros: result.length,
+      total: result.length,
     };
   }
 }
