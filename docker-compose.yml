@@ -13,5 +13,29 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  api:
+    build: ./api
+    ports:
+      - 5000:5000
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASS: postgres
+      DB_NAME: cnab
+    depends_on:
+      - db
+    restart: always
+
+  web:
+    build: ./web
+    ports:
+      - 3000:3000
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:5000
+    depends_on:
+      - api
+    restart: always
+
 volumes:
   postgres_data:
