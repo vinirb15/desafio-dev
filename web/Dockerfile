@@ -9,7 +9,8 @@ COPY . .
 
 RUN npm run build
 
-ENV API_URL="http://localhost:5000"
+ARG API_URL
+ENV API_URL=$API_URL
 
 EXPOSE 3000
 CMD ["npm", "start"]
