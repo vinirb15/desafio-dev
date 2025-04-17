@@ -28,8 +28,8 @@ export default function Home() {
   }, []);
 
 
-  function fetchStores() {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/transactions`)
+  async function fetchStores() {
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/transactions`)
       .then(res => res.json())
       .then(setStores);
   }
