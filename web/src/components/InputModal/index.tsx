@@ -48,7 +48,11 @@ export default function InputModal({ onUploadSuccess }: InputModalProps) {
   };
   return (
     <>
-      <button className='uploadButton' onClick={() => setModalOpen(true)}>
+      <button
+        className='uploadButton'
+        data-cy="open-upload-modal"
+        onClick={() => setModalOpen(true)}
+      >
         Enviar Arquivo .txt
       </button>
 
@@ -64,6 +68,7 @@ export default function InputModal({ onUploadSuccess }: InputModalProps) {
               <button
                 className='submitButton'
                 onClick={handleFileUpload}
+                data-cy="upload-file-button"
                 disabled={!selectedFile || isUploading}
               >
                 {isUploading ? 'Enviando...' : 'Enviar'}
@@ -71,6 +76,7 @@ export default function InputModal({ onUploadSuccess }: InputModalProps) {
               <button
                 className='closeButton'
                 onClick={() => setModalOpen(false)}
+                data-cy="close-modal-button"
                 disabled={isUploading}
                 style={{ marginLeft: '0.5rem' }}
               >

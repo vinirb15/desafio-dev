@@ -48,7 +48,7 @@ export default function Home() {
           {
             stores.length > 0 ? (
               stores.map((store: Store) => (
-                <div key={store.storeName} className='card'>
+                <div key={store.storeName} className='card' data-cy="list-itens">
                   <div className='storeHeader' onClick={() => toggleExpand(store.storeName)}>
                     <h2>{store.storeName}</h2>
                     <div className='storeInfo'>
