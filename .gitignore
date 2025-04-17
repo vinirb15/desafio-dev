@@ -25,7 +25,7 @@ pnpm-lock.yaml
 # ======================
 # Testing
 # ======================
-/coverage/
+*/coverage/
 
 # ======================
 # Environment Variables
