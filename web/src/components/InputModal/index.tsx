@@ -26,7 +26,7 @@ export default function InputModal({ onUploadSuccess }: InputModalProps) {
       const formData = new FormData();
       formData.append("file", selectedFile);
 
-      const response = await fetch("http://localhost:5000/cnab/upload", {
+      const response = await fetch(`${process.env.API_URL}/cnab/upload`, {
         method: "POST",
         body: formData,
       });

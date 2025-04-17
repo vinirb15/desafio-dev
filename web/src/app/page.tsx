@@ -28,7 +28,7 @@ export default function Home() {
   }, []);
 
   function fetchStores() {
-    fetch('http://localhost:5000/transactions')
+    fetch(`${process.env.API_URL}/transactions`)
       .then(res => res.json())
       .then(setStores);
   }
