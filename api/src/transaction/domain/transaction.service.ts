@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Store } from 'src/common/entity/store.entity';
 import { Repository } from 'typeorm';
+import { Store } from '@app/common/entity/store.entity';
 
 @Injectable()
 export class TransactionService {
@@ -42,7 +42,7 @@ export class TransactionService {
   }
 
   private getTypeDescription(type: number): string {
-    const map = {
+    const map: Record<number, string> = {
       1: 'Débito',
       2: 'Boleto',
       3: 'Financiamento',
@@ -53,6 +53,7 @@ export class TransactionService {
       8: 'Recebimento DOC',
       9: 'Aluguel',
     };
+
     return map[type] || 'Desconhecido';
   }
 }

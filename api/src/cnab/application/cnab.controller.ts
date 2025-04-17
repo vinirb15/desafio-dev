@@ -14,7 +14,7 @@ import {
   ApiTags,
   ApiResponse,
 } from '@nestjs/swagger';
-import { CNABService } from './cnab.service';
+import { CNABService } from '@app/cnab/domain/cnab.service';
 
 @ApiTags('CNAB')
 @Controller('cnab')
