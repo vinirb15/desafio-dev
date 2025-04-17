@@ -27,8 +27,9 @@ export default function Home() {
     fetchStores();
   }, []);
 
+
   function fetchStores() {
-    fetch(`${process.env.API_URL}/transactions`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/transactions`)
       .then(res => res.json())
       .then(setStores);
   }
