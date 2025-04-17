@@ -36,6 +36,24 @@ export class TransactionService {
     });
   }
 
+  async deleteAll() {
+    const queryRunner =
+      this.storeRepository.manager.connection.createQueryRunner();
+
+    await queryRunner.startTransaction();
+
+    try {
+      await queryRunner.manager.delete('Transaction', {});
+      await queryRunner.manager.delete(Store, {});
+      await queryRunner.commitTransaction();
+    } catch (error) {
+      await queryRunner.rollbackTransaction();
+      throw error;
+    } finally {
+      await queryRunner.release();
+    }
+  }
+
   private getSignalForType(type: number): number {
     const negative = [2, 3, 9];
     return negative.includes(type) ? -1 : 1;

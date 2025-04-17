@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Delete, Get } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { TransactionService } from '@app/transaction/domain/transaction.service';
 
@@ -10,5 +10,10 @@ export class TransactionController {
   @Get()
   async listByStore() {
     return this.transactionService.listGroupedByStore();
+  }
+
+  @Delete()
+  async resetDb() {
+    return this.transactionService.deleteAll();
   }
 }
