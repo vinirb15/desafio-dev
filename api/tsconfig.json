@@ -1,21 +1,44 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2023",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
     "incremental": true,
-    "skipLibCheck": true,
     "strictNullChecks": true,
+    "noImplicitAny": true,
+    "strictBindCallApply": true,
     "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": true,
+    "allowJs": false,
+    "declarationMap": true,
+    "noImplicitReturns": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": false,
+    "strict": true,
+    "inlineSources": true,
+    "sourceMap": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@app/*": [
+        "*"
+      ]
+    },
+    "resolveJsonModule": true,
+    "typeRoots": [
+      "src/@types",
+      "node_modules/@types"
+    ],
+    "baseUrl": "src",
+    "lib": [
+      "ES2020"
+    ],
+    "module": "commonjs",
+    "outDir": "dist/",
+    "target": "ES2020"
   }
 }

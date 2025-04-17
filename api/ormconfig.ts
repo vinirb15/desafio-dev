@@ -1,6 +1,6 @@
-import { Store } from 'src/common/entity/store.entity';
-import { Transaction } from 'src/common/entity/transaction.entity';
 import { DataSource } from 'typeorm';
+import { Store } from '@app/common/entity/store.entity';
+import { Transaction } from '@app/common/entity/transaction.entity';
 
 export default new DataSource({
   type: 'postgres',
