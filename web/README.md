@@ -35,6 +35,3 @@ npm run cy:open
 ```
 - Select e2e Testing
 - Select upload.cy.js
-
-### TODO List:
-- [ ] Create ENV to production environment
