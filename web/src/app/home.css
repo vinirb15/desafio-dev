@@ -1,18 +1,22 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
+  align-items: center; 
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  width: 100%; 
 }
 
 .main {
-  padding: 4rem 0;
+  padding: 4rem 1rem;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: 1200px; 
 }
 
 .footer {
@@ -39,12 +43,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1200px;
   width: 100%;
+  max-width: 100%; 
+  padding: 0 1rem; 
 }
 
 .card {
   width: 100%;
+  max-width: 100%; 
   margin: 1rem 0;
   border-radius: 10px;
   transition: all 0.3s ease;
@@ -125,6 +131,23 @@
 
 .negative {
   color: #dc3545;
+}
+
+.footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+  color: #666;
+  border-top: 1px solid #eee;
+}
+
+.footer a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {

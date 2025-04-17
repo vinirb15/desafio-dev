@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <div className='container'>
       <main className='main'>
-        <h1 className='title'>Store Transactions</h1>
+        <h1 className='title'>Transações das Lojas</h1>
 
         <InputModal onUploadSuccess={fetchStores} />
 
@@ -92,6 +92,11 @@ export default function Home() {
           }
         </div>
       </main>
+      <footer className="footer">
+        <p>
+          Desenvolvido por <a href="https://me.vbueno.com.br" target="_blank" rel="noopener noreferrer">Vinícius Bueno</a>
+        </p>
+      </footer>
     </div>
   );
 }
